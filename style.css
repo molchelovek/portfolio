@@ -146,7 +146,7 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 650px) {
   :root { --inset: 20px; }
   .outline { -webkit-text-stroke-width: 2px; }
-  html { scroll-padding-top: 74px; }
+  html { scroll-padding-top: 74px; background-color: var(--ink); }
   .top { min-height: 74px; justify-content: flex-end; }
   .site-name,.desktop-nav,.desktop-contact { display: none; }
   .menu-toggle { display: block; font-size: 14px; font-weight: 500; padding: 0; }
