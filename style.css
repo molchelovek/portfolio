@@ -24,7 +24,7 @@ svg { width: 24px; height: 24px; fill: currentColor; }
 @media (min-width: 1440px) { .wrap { padding-inline: 79px; } }
 .outline {
   color: var(--paper);
-  -webkit-text-stroke: 2px var(--ink);
+  -webkit-text-stroke: 4px var(--ink);
   paint-order: stroke fill;
 }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); transition: background-color .2s, color .2s; }
@@ -145,6 +145,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 @media (max-width: 650px) {
   :root { --inset: 20px; }
+  .outline { -webkit-text-stroke-width: 2px; }
   html { scroll-padding-top: 12px; }
   .site-header { position: static; }
   .site-header.is-scrolled { background: var(--paper); color: var(--ink); }
