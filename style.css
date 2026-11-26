@@ -122,12 +122,17 @@ dialog:fullscreen { width: 100%; max-width: none; max-height: none; height: 100%
 #mobile-menu[open] { animation: menu-enter .22s ease-out; }
 @keyframes menu-enter { from { transform: translateX(100%); } }
 body:has(dialog[open]) { overflow: hidden; }
-.menu-panel { padding: 20px 24px 32px; }
+.menu-panel { padding: 29px 27px 32px; }
 .menu-heading { display: flex; justify-content: space-between; align-items: center; }
 .menu-heading button,.menu-toggle { min-height: 44px; border: 0; background: transparent; }
-.menu-heading button { font-size: 28px; min-width: 44px; }
-.menu-panel nav { display: grid; margin-block: 24px; }
-.menu-panel nav a { padding-block: 14px; border-bottom: 1px solid #66605b; }
+.menu-heading h2 { color: var(--hot); font-size: 28px; font-weight: 500; }
+.menu-heading button { font-size: 28px; min-width: 44px; margin-right: -12px; }
+.mobile-break { display: none; }
+.menu-panel nav { display: grid; margin: 16px 0 37px; padding-block: 18px 29px; border-block: 1px solid #66605b; }
+.menu-panel nav a { display: flex; align-items: center; min-height: 65px; font-size: 22px; }
+.menu-panel nav a:hover { color: var(--hot); }
+.menu-contact { min-width: 222px; }
+.menu-panel .socials { margin-top: 31px; gap: 24px; }
 
 @media (min-width: 900px) { .desktop-nav { position: absolute; left: 50%; transform: translateX(-50%); } }
 @media (max-width: 760px) and (min-width: 651px) {
@@ -174,6 +179,7 @@ body:has(dialog[open]) { overflow: hidden; }
   footer .section { padding-block: 52px 60px; }
   .footer-cta h2 { font-size: clamp(22px,7.18vw,28px); }
   .footer-cta p { margin-block: 37px 42px; font-size: 16px; }
+  .mobile-break { display: initial; }
   .foot { margin-top: 40px; padding-top: 18px; font-size: 14px; }
   dialog { padding: 18px; }
   .thumbs { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
