@@ -222,7 +222,7 @@ const reviewViewport = matchMedia('(max-width: 650px)');
 let reviewsExpanded = false;
 const reviewCards = reviews.map(([name, body]) => {
   const card = element('article', 'review-card');
-  const link = element('a', 'review-link', 'Все отзывы во ВКонтакте ↗');
+  const link = element('a', 'review-link', 'Все отзывы во ВКонтакте');
   link.href = reviewsUrl;
   card.append(element('h3', '', name), element('p', '', body), link);
   reviewList.append(card);
