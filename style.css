@@ -22,7 +22,11 @@ img { display: block; width: 100%; }
 svg { width: 24px; height: 24px; fill: currentColor; }
 .wrap { width: min(100%, 1440px); margin-inline: auto; padding-inline: var(--inset); }
 @media (min-width: 1440px) { .wrap { padding-inline: 79px; } }
-.outline { color: transparent; -webkit-text-stroke: 1px var(--ink); }
+.outline {
+  color: var(--paper);
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+}
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); transition: background-color .2s, color .2s; }
 .site-header.is-scrolled { background: var(--ink); color: var(--paper); }
 .top { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; }
@@ -91,7 +95,7 @@ footer .section { padding-block: 78px 45px; }
 footer .section::before { display: none; }
 .footer-cta { text-align: center; }
 .footer-cta h2 { font-size: clamp(28px,4.58vw,66px); line-height: 1.24; }
-.footer-cta .outline { -webkit-text-stroke-color: var(--paper); }
+.footer-cta .outline { color: var(--ink); -webkit-text-stroke-color: var(--paper); }
 .footer-cta p { font-size: clamp(16px,1.6vw,23px); margin: 36px 0 46px; }
 .footer-cta .contact-button { width: min(800px, 100%); min-height: 60px; }
 .foot { border-top: 1px solid #66605b; margin-top: 57px; padding-top: 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-weight: 500; }
