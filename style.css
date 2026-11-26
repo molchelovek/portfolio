@@ -146,11 +146,9 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 650px) {
   :root { --inset: 20px; }
   .outline { -webkit-text-stroke-width: 2px; }
-  html { scroll-padding-top: 12px; }
-  .site-header { position: static; }
-  .site-header.is-scrolled { background: var(--paper); color: var(--ink); }
+  html { scroll-padding-top: 74px; }
   .top { min-height: 74px; justify-content: flex-end; }
-  .top::after,.site-name,.desktop-nav,.desktop-contact { display: none; }
+  .site-name,.desktop-nav,.desktop-contact { display: none; }
   .menu-toggle { display: block; font-size: 14px; font-weight: 500; padding: 0; }
   .menu-toggle[hidden] { display: none; }
   .hero { display: block; padding-block: 44px 14px; }
