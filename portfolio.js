@@ -16,24 +16,28 @@ const work = [
     "title": "Оформление соцсетей",
     "groups": [
       {
-        "title": "Оформление профилей и постов",
+        "title": "Подборка работ",
         "images": []
       }
     ]
   },
   {
     "title": "Презентации",
-    "groups": []
+    "groups": [{ "title": "Подборка проектов", "images": [] }]
   },
   {
     "title": "Сайты",
-    "groups": []
+    "groups": [{ "title": "Подборка проектов", "images": [] }]
   },
   {
     "title": "Полиграфия",
     "groups": [
       {
-        "title": "Бейджи, дипломы и печатные материалы",
+        "title": "Бейджи",
+        "images": []
+      },
+      {
+        "title": "Печатные материалы",
         "images": []
       }
     ]
@@ -133,14 +137,16 @@ function image(src, alt) {
   item.loading = 'lazy';
   return item;
 }
-function tile(title, cover, action) {
+function tile(title, cover, action, isProjectCollection) {
   const item = button('', action);
   item.className = 'tile';
   item.setAttribute('aria-label', title);
   const art = cover ? image(cover, '') : element('span', 'tile-art');
   const label = element('span', 'tile-label', title);
-  label.append(element('span', '', '↗'));
-  item.append(art, label);
+  const media = element('span', 'tile-media');
+  media.append(art);
+  if (isProjectCollection && !cover) media.append(element('span', 'tile-caption', 'Подборка проектов'));
+  item.append(media, label);
   return item;
 }
 function showDialog(title) {
@@ -152,13 +158,16 @@ function showDialog(title) {
 function showCategory(category) {
   activeCategory = category;
   content.replaceChildren();
+  dialog.classList.toggle('gallery-compact', category.title === 'Оформление соцсетей');
   showDialog(category.title);
-  const groups = category.groups.filter(group => group.images.length);
+  const groups = category.groups;
   if (!groups.length) {
     content.append(element('p', '', 'Работы в этой подборке появятся позже.'));
     return;
   }
-  for (const group of groups) {
+  const slotsByCategory = [[3, 4], [2], [1], [1], [2, 4], [4, 3], [10, 6, 2]];
+  const slots = slotsByCategory[work.indexOf(category)];
+  for (const [groupIndex, group] of groups.entries()) {
     const section = element('section', 'gallery-group');
     if (group.title) section.append(element('h3', '', group.title));
     const grid = element('div', 'thumbs');
@@ -168,6 +177,13 @@ function showCategory(category) {
       thumb.append(image(src, 'Работа ' + (i + 1)));
       grid.append(thumb);
     });
+    if (!group.images.length) {
+      for (let i = 0; i < slots[groupIndex]; i++) {
+        const placeholder = element('span', 'gallery-placeholder');
+        placeholder.setAttribute('aria-hidden', 'true');
+        grid.append(placeholder);
+      }
+    }
     section.append(grid);
     content.append(section);
   }
@@ -199,7 +215,7 @@ function showImage(images, index, title) {
 }
 work.forEach((category, index) => {
   const grid = document.querySelector(index < 4 ? '#main-work' : '#extra-work');
-  grid.append(tile(category.title, category.cover || category.groups.flatMap(group => group.images)[0], () => showCategory(category)));
+  grid.append(tile(category.title, category.cover || category.groups.flatMap(group => group.images)[0], () => showCategory(category), index === 2 || index === 3));
 });
 const reviewList = document.querySelector('#review-list');
 const reviewViewport = matchMedia('(max-width: 650px)');

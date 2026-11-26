@@ -11,10 +11,10 @@
 <body>
 <header class="site-header">
 <div class="wrap top">
-<a href="#home">Даниил Бакулин</a>
-<nav class="desktop-nav" aria-label="Разделы сайта"><a href="#work">Работы</a><a href="#about">Обо мне</a><a href="#reviews">Отзывы</a></nav>
-<a class="accent desktop-contact" href="https://t.me/molchelovek">Написать ↗</a>
-<button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" hidden>Меню</button>
+<a class="site-name" href="#home">Даниил Бакулин</a>
+<nav class="desktop-nav" aria-label="Разделы сайта"><a href="#work">Работы</a><a href="#about">Обо мне</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a></nav>
+<a class="contact-button desktop-contact" href="https://t.me/molchelovek">Написать в Telegram</a>
+<button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="mobile-menu" hidden>☰ Меню</button>
 </div>
 </header>
 <dialog id="mobile-menu" aria-labelledby="menu-title">
@@ -30,11 +30,11 @@
 </dialog>
 <main id="home">
 <section class="wrap hero" aria-labelledby="name">
-<div class="hero-copy"><p class="role">Графический дизайнер</p><h1 id="name">Даниил<br>Бакулин</h1><p class="intro">Визуальные решения<br>под задачи бизнеса</p><a class="under" href="#work">Смотреть работы <span>↓</span></a></div>
+<div class="hero-copy"><p class="role">Графический дизайнер</p><h1 id="name"><span class="outline">Даниил</span><br>Бакулин</h1><p class="intro">Визуальные решения<br>под задачи бизнеса</p><a class="under" href="#work">Смотреть проекты ↓</a></div>
 <figure><img src="portrait.png" alt="Даниил Бакулин в тёмных очках и чёрной куртке" width="1122" height="1402" fetchpriority="high"></figure>
 </section>
 <section class="wrap section" id="work">
-<h2>Избранные работы</h2>
+<h2>Проекты</h2>
 <div class="work-grid" id="main-work"></div>
 <h3>Другие работы</h3>
 <div class="extra-grid" id="extra-work"></div>
@@ -42,16 +42,16 @@
 <section class="wrap section" id="about">
 <h2>Обо мне</h2>
 <dl class="stats"><div><dt>3<span>+</span></dt><dd>года в дизайне</dd></div><div><dt>100<span>+</span></dt><dd>проектов</dd></div><div><dt>30<span>+</span></dt><dd>ниш</dd></div></dl>
-<p class="about-copy">Помогаю бизнесу становиться узнаваемым через дизайн. Создаю визуальный язык, который передаёт характер и ценности бренда и помогает ему выстраивать связь с аудиторией.</p>
+<div class="about-copy"><p>Помогаю бизнесу становиться узнаваемым через дизайн.</p><p>Создаю визуальный язык, который передаёт характер и ценности бренда и помогает ему выстраивать связь с аудиторией.</p></div>
 </section>
 <section class="wrap section" id="reviews"><h2>Отзывы</h2><div id="review-list" class="extra-grid"></div></section>
 </main>
 <footer id="contact">
-<div class="wrap section"><div class="footer-cta"><h2>Давайте придадим<br>вашей идее форму</h2><p>Расскажите, что хотите сделать.<br>Подскажу, с чего начать.</p><a class="under" href="https://t.me/molchelovek">Написать в Telegram <span>↗</span></a></div>
-<div class="foot"><a href="#home">Даниил Бакулин ↑</a><div class="socials">
+<div class="wrap section"><div class="footer-cta"><h2>Давайте придадим<br>вашей идее <span class="outline">форму</span></h2><p>Расскажите, что хотите сделать.<br>Подскажу, с чего начать.</p><a class="contact-button" href="https://t.me/molchelovek">Написать в Telegram <span>↗</span></a></div>
+<div class="foot"><a href="#home">Даниил Бакулин</a><div class="socials">
 <a href="https://www.behance.net/molchelovek" aria-label="Behance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h7a4 4 0 0 1 2 7 4 4 0 0 1-2 7H2zm3 3v3h3a1.5 1.5 0 0 0 0-3zm0 5v3h3a1.5 1.5 0 0 0 0-3zm10-6h6v2h-6zm3 3c3 0 5 2 5 5h-7c0 2 3 3 4 1h3c-1 4-10 5-10-1 0-3 2-5 5-5zm-2 3h4c0-2-4-2-4 0z"/></svg></a>
 <a href="https://vk.ru/nocturnedesign" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h3c.3 5 2.6 8 4 8V6h3v4c2-1 4-3 5-4h3c-.5 2-2 4-4 6 2 1 4 3 5 6h-3c-1-2-3-4-6-4v4h-1C5 18 2 14 2 6z"/></svg></a>
-<a href="https://t.me/molchelovek" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 3 18 21l-6-5-3 3 .5-5L19 6 7 13l-5-2z"/></svg></a>
+<a href="https://t.me/nocturnegraphicdesign" aria-label="Telegram-канал"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 3 18 21l-6-5-3 3 .5-5L19 6 7 13l-5-2z"/></svg></a>
 </div></div></div>
 </footer>
 <dialog id="gallery" aria-labelledby="gallery-title">
